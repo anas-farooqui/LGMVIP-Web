@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+    <title>
+        Registration Form
+    </title>
+    <style>
+        body{
+            font-family: 'Segoe UI';
+        background-color: rgb(68, 190, 238);
+
+
+        }
+    *{
+        box-sizing: border-box;
+        width:400px;
+       
+        
+       
+        
+
+     } 
+     h1{
+        color: #1b28a0;
+        font-family: Arial;
+        text-align: center 
+   
+     }
+     
+     input[type=text],input[type=email]{
+            width:70%;
+            padding:5px;
+            margin: 10px 0 22px 0;
+            display: inline-block;
+            background-color:whites;
+          border-color:rgb(47, 0, 255);
+          border-radius: 20px;
+        
+
+
+        }
+        .gender,.skills{
+            width:70%;
+            padding:5px;
+            margin: 5px 0 22px 0;
+            display: inline-block;
+            background-color:whites;
+          border-color:rgb(17, 0, 255);
+          border-radius: 20px;
+
+
+        }
+        input[type=text]:focus,
+        input[type=email]:focus{
+            background-color: antiquewhite;
+            outline:none;
+        }    
+        button{
+            background-color: blue;
+            color:white;
+            padding:14px 20px;
+            margin: 8px 0;
+            border-radius: 15px;
+            cursor:pointer;
+            width:40%;
+           
+        }
+        button:hover{
+            opacity:1;
+
+        }
+        
+        .container{
+            padding: 15px;
+            width: 200px;
+
+        }
+        table
+        {
+           float:left;
+            padding-left:600px;
+            position:absolute;
+           top:20%;
+            
+        }
+        th, td {
+             padding: 5px;
+            text-align: right;
+            border-bottom: 5px solid rgb(17, 30, 221);
+            border-radius: 20px;
+          
+            
+}
+             
+        
+    </style>
+    
+   
+<body>
+   
+        <h1>Student Enrollment Form</h1>  
+
+        <form>
+       
+        <hr>
+        <label><b> Name.......</b></label>
+        <input type="text" placeholder="Enter Name " id="name" name="name" required></input>
+        <br>
+    
+
+        <label> <b> Email........</b></label>
+        <input type="email" placeholder="Enter Email" id="email" name="email" required></input>
+        <br>
+    
+
+        <label><b>ImageLink</b></label>
+        <input type="text" placeholder="Image Link " id="image" name="name" ></input>
+        <br>
+       
+
+        <label><b> Gender......</b></label>
+        <select name="gender" class="gender" id="gender">
+            <option value="none" selected>Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select>
+        <br>
+      
+
+        
+        <label> <b> Skills........</b></label>
+        <select name="skills" class="skills"  id="skills">
+            <option value="none" selected>Skills</option>
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JS">JS</option>
+            <option value="JS">Python</option>
+            <option value="JS">React</option>
+        </select>
+
+      
+            
+           
+        <button type="button" class="regbtn" id="btn" onclick="showData()">Enroll Student</button>
+        <button type="button" class="regbtn" id="btn" >Clear</button>
+    </form> 
+
+</div>
+<div class="display">
+
+    <table id="data" class="data">
+    
+        <tr>
+        
+            <th> Name </th>
+            <th> Email </th>
+            <th> Image Link </th>
+            <th> Gender </th>
+            <th> Skills </th>
+        </tr>
+       
+    </table>
+</div>
+
+<script>
+
+var name1 = [];
+var email1= [];
+var image1= [];
+var gender1 = [];
+var skills1= [];
+
+var a = 1;
+var b = 0;
+
+function showData() {
+
+    var AddRown = document.getElementById('data');
+    var NewRow = AddRown.insertRow(a);
+
+    name1[b] = document.getElementById("name").value;
+    email1[b] = document.getElementById("email").value;
+    image1[b] = document.getElementById("image").value;
+    gender1[b] = document.getElementById("gender").value;
+    skills1[b] = document.getElementById("skills").value;
+
+    var box1 = NewRow.insertCell(0);
+    var box2 = NewRow.insertCell(1);
+    var box3 = NewRow.insertCell(2);
+    var box4 = NewRow.insertCell(3);
+    var box5 = NewRow.insertCell(4);
+
+    box1.innerHTML = name1[b];
+    box2.innerHTML = email1[b];
+    box3.innerHTML = image1[b];
+    box4.innerHTML = gender1[b];
+    box5.innerHTML = skills1[b];
+
+    a++;
+    b++;
+}
+   </script>
+
+</body>
+
+</html>
+
